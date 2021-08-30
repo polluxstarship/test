@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{object.title}}</h1>
+    <p>{%if description%}{{object.description}}{%else%}description coming soon!{%endif%}</p>
+    <a href="{{object.get_edit_url}}">edit</a>
+    <a href="{{object.get_delete_url}}">delete</a>
+{% endblock %}

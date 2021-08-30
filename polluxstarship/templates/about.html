@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>sdfsdfs</p>
+    <p>{{ see }}, {{ gee }}, {{ qee }}</p>
+    <ul>
+        <li> item 1 </li>
+        <li> item 2 </li>
+    </ul>
+    <ul>
+    {% for i in qee%}
+        {% if i == 123 %}
+            <li>{{ forloop.counter }} - {{i|add:22}}</li> # built in template tag filter
+        {% elif i == 'gg' %}
+            <li>this is not a network</li>
+        {% else %}
+            <li>{{ forloop.counter }} - {{i}}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock content %}
